@@ -5,11 +5,10 @@
   "framework": "nextjs",
   "functions": {
     "server.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
   },
   "env": {
-    "DATABASE_URL": "postgres://299c0369a8e301e95df2f55e5ec488e89cbe17e1e1bf09cbed5c15b976413926:sk_xswj0t9xZt4l-Vp34LoNP@db.prisma.io:5432/postgres?sslmode=require",
-    "NEXTAUTH_SECRET": "@nextauth_secret"
+    "DATABASE_URL": "postgres://299c0369a8e301e95df2f55e5ec488e89cbe17e1e1bf09cbed5c15b976413926:sk_xswj0t9xZt4l-Vp34LoNP@db.prisma.io:5432/postgres?sslmode=require"
   }
 }
