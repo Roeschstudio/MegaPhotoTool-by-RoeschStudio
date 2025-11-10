@@ -3,18 +3,19 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// Socket.IO is not fully supported in Vercel serverless functions
-// This is a placeholder that returns a proper response
+// Socket.IO placeholder for Vercel deployment
 export async function GET(request: NextRequest) {
   return NextResponse.json({
-    message: 'Socket.IO endpoint - WebSocket connections are handled differently in production',
-    note: 'For real-time functionality, consider using Vercel Edge Functions with WebSockets or a third-party service'
+    message: 'Socket.IO endpoint',
+    status: 'ok',
+    note: 'WebSocket connections are not supported in this environment'
   });
 }
 
 export async function POST(request: NextRequest) {
   return NextResponse.json({
-    message: 'Socket.IO endpoint - WebSocket connections are handled differently in production',
-    note: 'For real-time functionality, consider using Vercel Edge Functions with WebSockets or a third-party service'
+    message: 'Socket.IO endpoint',
+    status: 'ok',
+    note: 'WebSocket connections are not supported in this environment'
   });
 }
