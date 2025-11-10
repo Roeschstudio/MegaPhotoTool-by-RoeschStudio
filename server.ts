@@ -31,21 +31,26 @@ async function createCustomServer() {
       handle(req, res);
     });
 
-    // Setup Socket.IO
-    const io = new Server(server, {
-      path: '/api/socketio',
-      cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-      }
-    });
+    // Only setup Socket.IO in development mode
+    if (dev) {
+      // Setup Socket.IO
+      const io = new Server(server, {
+        path: '/api/socketio',
+        cors: {
+          origin: "*",
+          methods: ["GET", "POST"]
+        }
+      });
 
-    setupSocket(io);
+      setupSocket(io);
+    }
 
     // Start the server
     server.listen(currentPort, hostname, () => {
       console.log(`> Ready on http://${hostname}:${currentPort}`);
-      console.log(`> Socket.IO server running at ws://${hostname}:${currentPort}/api/socketio`);
+      if (dev) {
+        console.log(`> Socket.IO server running at ws://${hostname}:${currentPort}/api/socketio`);
+      }
     });
 
   } catch (err) {
