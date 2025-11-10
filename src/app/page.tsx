@@ -32,8 +32,11 @@ export default function MegaPhotoTool() {
   const sizeOptions = [
     { value: 'original', label: 'Tamaño Original' },
     { value: '1000', label: '1000x1000' },
+    { value: '1200', label: '1200x1200' },
     { value: '2000', label: '2000x2000' },
+    { value: '2400', label: '2400x2400' },
     { value: '3000', label: '3000x3000' },
+    { value: '3600', label: '3600x3600' },
   ]
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
